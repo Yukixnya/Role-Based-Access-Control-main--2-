@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular.js with Express</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/userController.js"></script>
+    <script src="app/services/userService.js"></script>
+</head>
+<body>
+    <div ng-controller="UserController">
+        <h1>User Management</h1>
+        <ul>
+            <li ng-repeat="user in users">{{ user.name }} ({{ user.email }})</li>
+        </ul>
+
+        <form ng-submit="addUser()">
+            <input type="text" ng-model="newUser.name" placeholder="Name" required>
+            <input type="email" ng-model="newUser.email" placeholder="Email" required>
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+</body>
+</html>
